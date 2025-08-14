@@ -23,6 +23,12 @@
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>https://nhnacademy.com/</param-value>
+    </context-param>
+
+
     <servlet>
         <servlet-name>nowServlet</servlet-name>
         <servlet-class>com.nhnacademy.hello.NowServlet</servlet-class>
@@ -32,6 +38,7 @@
     <servlet-mapping>
         <servlet-name>nowServlet</servlet-name>
         <url-pattern>/now</url-pattern>
+
     </servlet-mapping>
 
     <servlet>
@@ -50,6 +57,7 @@
         <servlet-name>multiServlet</servlet-name>
         <servlet-class>com.nhnacademy.hello.MultiServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
+
     </servlet>
 
     <servlet-mapping>
