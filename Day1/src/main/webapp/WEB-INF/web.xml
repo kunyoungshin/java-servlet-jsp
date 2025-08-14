@@ -18,6 +18,7 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
+
     <servlet-mapping>
         <servlet-name>helloServlet</servlet-name>
         <url-pattern>/hello</url-pattern>
@@ -78,5 +79,16 @@
         <servlet-name>counterServlet</servlet-name>
         <url-pattern>/counter</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>requestServlet</servlet-name>
+        <servlet-class>com.nhnacademy.hello.RequestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>requestServlet</servlet-name>
+        <url-pattern>/req</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>
