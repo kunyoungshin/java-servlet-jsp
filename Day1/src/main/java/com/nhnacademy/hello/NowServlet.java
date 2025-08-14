@@ -1,5 +1,6 @@
 package com.nhnacademy.hello;
 
+import com.nhnacademy.util.CounterUtils;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -15,9 +16,11 @@ import java.time.format.DateTimeFormatter;
 @Slf4j
 public class NowServlet extends HttpServlet {
 
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+
+        CounterUtils.increaseCounter(getServletContext());
+
         resp.setCharacterEncoding("UTF-8");
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
@@ -33,6 +36,7 @@ public class NowServlet extends HttpServlet {
             writer.println("<body>");
             writer.println("<h1>현재 시간</h1>");
             writer.println("<h1>" + nowDateTimeString + "</h1>");
+            writer.println("<h1> counter : " + getServletContext().getAttribute("counter") + "<h1>");
             writer.println("</body>");
             writer.println("</html>");
         } catch (IOException e) {
@@ -45,4 +49,5 @@ public class NowServlet extends HttpServlet {
         log.info("before init!");
         super.init(config);
     }
+
 }
