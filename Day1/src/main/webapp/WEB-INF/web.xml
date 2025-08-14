@@ -26,4 +26,15 @@
         <url-pattern>/now</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>beautifyServlet</servlet-name>
+        <servlet-class>com.nhnacademy.hello.BeautifyServlet</servlet-class>
+        <load-on-startup>3</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>beautifyServlet</servlet-name>
+        <url-pattern>/beautify</url-pattern>
+    </servlet-mapping>
+
 </web-app>
