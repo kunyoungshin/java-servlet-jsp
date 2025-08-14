@@ -37,4 +37,16 @@
         <url-pattern>/beautify</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>multiServlet</servlet-name>
+        <servlet-class>com.nhnacademy.hello.MultiServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>multiServlet</servlet-name>
+        <url-pattern>/multi</url-pattern>
+    </servlet-mapping>
+
 </web-app>
