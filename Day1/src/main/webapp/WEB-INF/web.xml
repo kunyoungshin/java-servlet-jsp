@@ -124,5 +124,15 @@
         <url-pattern>/read-cookie</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>domainCookieServlet</servlet-name>
+        <servlet-class>com.nhnacademy.hello.DomainCookieServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>domainCookieServlet</servlet-name>
+        <url-pattern>/domain-cookie/*</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>
