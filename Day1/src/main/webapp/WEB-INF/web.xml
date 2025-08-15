@@ -165,6 +165,7 @@
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
+    <!-- Filter    -->
     <filter>
         <filter-name>characterEncodingFilter</filter-name>
         <filter-class>com.nhnacademy.hello.filter.CharacterEncodingFilter</filter-class>
@@ -176,6 +177,23 @@
 
     <filter-mapping>
         <filter-name>characterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>loginCheckFilter</filter-name>
+        <filter-class>com.nhnacademy.hello.filter.LoginCheckFilter</filter-class>
+        <init-param>
+            <param-name>exclude-urls</param-name>
+            <param-value>
+                /login
+                /logout
+                /login.html
+            </param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>loginCheckFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
