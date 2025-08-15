@@ -48,11 +48,16 @@
         <param-value>counter.dat</param-value>
     </context-param>
 
+    <!-- Listener   -->
     <listener>
         <listener-class>com.nhnacademy.hello.listener.ServletContextListener</listener-class>
     </listener>
 
+    <listener>
+        <listener-class>com.nhnacademy.hello.listener.SessionListener</listener-class>
+    </listener>
 
+    <!--    Servlet-->
     <servlet>
         <servlet-name>nowServlet</servlet-name>
         <servlet-class>com.nhnacademy.hello.NowServlet</servlet-class>
