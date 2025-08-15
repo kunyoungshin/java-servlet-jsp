@@ -1,5 +1,6 @@
 package com.nhnacademy.hello.login;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -52,7 +53,6 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         String id = req.getParameter("id");
         String pwd = req.getParameter("pwd");
 
@@ -63,9 +63,11 @@ public class LoginServlet extends HttpServlet {
             resp.sendRedirect("/login");
         } else {
             log.error("아이디/패스워드가 일치하지 않습니다.");
-            resp.sendRedirect("/login.html");
+            //resp.sendRedirect("/login.html");
+            RequestDispatcher rd = req.getRequestDispatcher("/login.html");
+            rd.forward(req, resp);
+            log.error("id:{}", id);
         }
-
     }
 
 }
