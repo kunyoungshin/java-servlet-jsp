@@ -179,6 +179,16 @@
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>fileUploadServlet</servlet-name>
+        <servlet-class>com.nhnacademy.hello.file.FileUploadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>fileUploadServlet</servlet-name>
+        <url-pattern>/file/fileUpload</url-pattern>
+    </servlet-mapping>
+
+
     <!-- Filter    -->
     <filter>
         <filter-name>characterEncodingFilter</filter-name>
