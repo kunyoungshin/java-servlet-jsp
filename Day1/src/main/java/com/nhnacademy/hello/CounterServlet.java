@@ -2,6 +2,8 @@ package com.nhnacademy.hello;
 
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebInitParam;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -13,6 +15,9 @@ import java.util.Optional;
 
 
 @Slf4j
+@WebServlet(name = "counterServlet", urlPatterns = "/counter", initParams = {
+        @WebInitParam(name = "counter", value = "100")
+})
 public class CounterServlet extends HttpServlet {
 
     private long counter;

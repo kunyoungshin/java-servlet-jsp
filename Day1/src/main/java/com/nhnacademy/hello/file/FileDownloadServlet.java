@@ -1,6 +1,7 @@
 package com.nhnacademy.hello.file;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -15,6 +16,7 @@ import java.nio.file.Path;
 import java.util.Objects;
 
 @Slf4j
+@WebServlet(name = "fileDownloadServlet", urlPatterns = "/file/fileDownload")
 public class FileDownloadServlet extends HttpServlet {
     private static final String UPLOAD_DIR = "/Users/nhn/IdeaProjects/servlet:jsp/2일차/src/main/upload";
 

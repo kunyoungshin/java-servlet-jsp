@@ -2,6 +2,7 @@ package com.nhnacademy.hello.file;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -11,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.io.File;
 import java.io.IOException;
 
+@WebServlet(name = "fileUploadServlet", urlPatterns = "/file/fileUpload")
 @MultipartConfig(
         fileSizeThreshold = 1024 * 1024 * 1,  // 1 MB
         maxFileSize = 1024 * 1024 * 10, // 10 MB

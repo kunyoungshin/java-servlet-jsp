@@ -1,6 +1,7 @@
 package com.nhnacademy.hello;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -11,6 +12,7 @@ import java.io.PrintWriter;
 import java.util.Objects;
 
 @Slf4j
+@WebServlet(name = "requestServlet", urlPatterns = "/req")
 public class RequestServlet extends HttpServlet {
 
     @Override

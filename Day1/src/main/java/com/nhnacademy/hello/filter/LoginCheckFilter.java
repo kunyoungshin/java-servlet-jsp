@@ -1,6 +1,8 @@
 package com.nhnacademy.hello.filter;
 
 import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebFilter;
+import jakarta.servlet.annotation.WebInitParam;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
@@ -13,6 +15,9 @@ import java.util.Objects;
 import java.util.Set;
 
 @Slf4j
+@WebFilter(urlPatterns = "/*", initParams = {
+        @WebInitParam(name = "exclude-urls", value = "/login\n/logout\n/login.html")
+})
 public class LoginCheckFilter implements Filter {
     private final Set<String> excludeUrls = new HashSet<>();
 

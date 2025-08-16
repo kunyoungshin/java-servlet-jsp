@@ -2,6 +2,8 @@ package com.nhnacademy.hello;
 
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebInitParam;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -13,6 +15,15 @@ import java.util.Objects;
 
 
 @Slf4j
+@WebServlet(
+        name = "helloServlet",
+        urlPatterns = "/hello",
+        loadOnStartup = 1,
+        initParams = {
+                @WebInitParam(name = "title", value = "Mr."),
+                @WebInitParam(name = "name", value = "franky")
+        }
+)
 public class HelloServlet extends HttpServlet {
 
 

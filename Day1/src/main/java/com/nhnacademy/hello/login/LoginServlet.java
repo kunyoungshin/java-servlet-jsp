@@ -3,6 +3,8 @@ package com.nhnacademy.hello.login;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebInitParam;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -14,6 +16,10 @@ import java.io.PrintWriter;
 import java.util.Objects;
 
 @Slf4j
+@WebServlet(name = "loginServlet", urlPatterns = "/login", initParams = {
+        @WebInitParam(name = "id", value = "admin"),
+        @WebInitParam(name = "pwd", value = "1234")
+})
 public class LoginServlet extends HttpServlet {
     private String initParamId;
     private String initParamPwd;

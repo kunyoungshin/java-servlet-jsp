@@ -1,9 +1,14 @@
 package com.nhnacademy.hello.filter;
 
 import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebFilter;
+import jakarta.servlet.annotation.WebInitParam;
 
 import java.io.IOException;
 
+@WebFilter(urlPatterns = "/*", initParams = {
+        @WebInitParam(name = "encoding", value = "UTF-8")
+})
 public class CharacterEncodingFilter implements Filter {
     private String encoding;
 
@@ -18,4 +23,3 @@ public class CharacterEncodingFilter implements Filter {
         filterChain.doFilter(servletRequest, servletResponse);
     }
 }
-
