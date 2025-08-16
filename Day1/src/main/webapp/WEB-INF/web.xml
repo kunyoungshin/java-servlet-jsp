@@ -188,6 +188,15 @@
         <url-pattern>/file/fileUpload</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>fileDownloadServlet</servlet-name>
+        <servlet-class>com.nhnacademy.hello.file.FileDownloadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>fileDownloadServlet</servlet-name>
+        <url-pattern>/file/fileDownload</url-pattern>
+    </servlet-mapping>
+
 
     <!-- Filter    -->
     <filter>
@@ -230,5 +239,6 @@
         <filter-name>counterFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
 
 </web-app>
